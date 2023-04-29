@@ -4,10 +4,7 @@
   <img alt="Shows brain in a jar logo fit for light mode and dark mode." src="https://user-images.githubusercontent.com/110482909/235280124-0a7c66cb-fcbd-438b-bb64-4c3cae214c4d.png">
 </picture>
 
-
-
-# Brain in a Jar
-
+---
 This is a project for a fictional company that offers the unique service of preserving your brain in a jar, so you can live on after your body has expired.
 
 The website was built using HTML, CSS, and JavaScript, and utilizes the Sanity CMS for non-static content such as the webshop, FAQ, and user reviews. All images on the website were generated using Midjourney AI.
