@@ -4,6 +4,8 @@
   <img alt="Shows brain in a jar logo fit for light mode and dark mode." src="https://user-images.githubusercontent.com/110482909/235280124-0a7c66cb-fcbd-438b-bb64-4c3cae214c4d.png">
 </picture>
 
+
+
 # Brain in a Jar
 
 This is a project for a fictional company that offers the unique service of preserving your brain in a jar, so you can live on after your body has expired.
@@ -11,18 +13,22 @@ This is a project for a fictional company that offers the unique service of pres
 The website was built using HTML, CSS, and JavaScript, and utilizes the Sanity CMS for non-static content such as the webshop, FAQ, and user reviews. All images on the website were generated using Midjourney AI.
 
 ## Features
+```
 Landing page with a whimsical 3D-rendered brain in a jar design, with a fun and playful style.
 Webshop where users can order their own brain in a jar.
 FAQ section to answer common questions about the service.
 User review section with short reviews from satisfied customers.
 Responsive design that works across desktop and mobile devices.
+```
 
 ## Technologies Used
+```
 HTML
 CSS
 JavaScript
 Sanity Studio CMS
 Midjourney AI
+```
 
 ## Deployment
 The website is deployed using Sanity Studio and Netlify.
@@ -36,18 +42,4 @@ To run the project locally, follow these steps:
 
 ## License
 This project is licensed under the MIT License.
-<details>
 
-<summary>Tips for collapsed sections</summary>
-
-### You can add a header
-
-You can add text within a collapsed section. 
-
-You can add an image or a code block, too.
-
-```ruby
-   puts "Hello World"
-```
-
-</details>
