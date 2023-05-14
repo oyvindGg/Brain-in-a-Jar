@@ -3,3 +3,6 @@
 @import 'grid.css';
 @import 'fonts.css';
 @import 'base.css';
+
+@import './modules/navigation.css';
+@import './modules/hero.css';

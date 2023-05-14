@@ -1,0 +1,9 @@
+.hero {
+	height: 100vh;
+	background-image: url('/_app/assets/section-image/heroimage.png');
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+ }
+
+ /*  Check Responsive full page scroll JS */
