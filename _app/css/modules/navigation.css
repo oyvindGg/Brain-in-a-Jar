@@ -27,6 +27,11 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  
+  font-family: 'Helvetica Neue';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.3em;
 }
 .navigation__box--items ul {
   list-style: none;
