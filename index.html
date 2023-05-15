@@ -11,33 +11,93 @@
 	</head>
 	
 	<body>
-		<div class="grid">
-		<header class="navigation__box">
+		<header class="navigation grid">
+			<div class="navigation__box">
 				 <div class="navigation__box--logo">
-					logo
+					<a href="#home"><img src="./_app/assets/logo.png" alt="logo"></a>
 				</div>
 				 <nav class="navigation__box--items">
 					<ul>
-						<li><a href="#">About</a></li>
-						<li><a href="#">F.A.Q</a></li>
-						<li><a href="#">Reviews</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#faq">F.A.Q</a></li>
+						<li><a href="#review">Reviews</a></li>
 					 </ul>
 				 </nav>
-				 <button class="navigation__box--button">Button</button>
+				 <button class="navigation__box--button">Buy a jar <span class="material-symbols-outlined">
+					start
+					</span></button>
+			</div>
 		 </header>
 		 <div class="content">
 
-			<section class="hero">
+			<section id="home" class="hero__background">
+					<h1 class="yourbrain">YOUR BRAIN</h1>
+					<h1 class="inajar">IN A JAR.</h1>
+			</section>
+
+			<section id="about" class="about__background">
+					<div class="about">
+						<div class="about__textbox">
+							<h1 class="about__textbox--heading1">Welcome to Brain in a Jar, the place where we believe that humans don't need their brains anymore. 
+								Just kidding! (Well, kind of.) </h1>
+								<br>
+							<h2 class="about__textbox--heading2">Here at Brain in a Jar, we believe in pushing the boundaries of creativity and imagination, and we 
+								do it by exploring the fascinating world of neuroscience. We're not just another brain in a jar, but 
+								a team of curious individuals who love to learn and share knowledge about the incredible power of the 
+								human brain. <br>
+								<br> Whether you're a curious explorer, a student, or just looking for some brainy fun, we've got you covered with a range of exciting and educational content. So come join us on our mission to celebrate the beauty and complexity of the brain, one jar at a time.</h2>
+						</div>
+					</div>
+			</section>
+
+			<section id="faq" class="faq__background">
+				<div class="faq">
+					<div class="faq__textbox">
+						<div class="faq__questions">
+							<div class="faq__questions--question">
+								<h3 class="faq__questions--question1">Q: What is Brain in a Jar?</h3>
+								<h4 class="faq__questions--question2">A: Brain in a Jar is a revolutionary company that offers the ultimate solution to modern 
+									life's biggest problem: the brain. Who needs a bulky, inconvenient brain when you can simply store it in a jar and access 
+									it whenever you need to?</h4>
+							</div>
+							<div class="faq__questions--question">
+								<h3 class="faq__questions--question1">Q: Is it safe to store my brain in a jar?</h3>
+								<h4 class="faq__questions--question2">A: Absolutely! Our jars are made from the finest quality materials and are specially 
+									designed to keep your brain fresh and intact. Just make sure to keep the jar away from any curious cats or toddlers.</h4>
+							</div>
+							<div class="faq__questions--question">
+								<h3 class="faq__questions--question1">Q: Can I still think and function normally with my brain in a jar?</h3>
+								<h4 class="faq__questions--question2">A: Of course! In fact, you'll find that life is much easier without the burden of a 
+									physical body holding you back. Plus, you'll have plenty of extra storage space in your skull for all your favorite memes.</h4>
+							</div>
+							<div class="faq__questions--question">
+								<h3 class="faq__questions--question1">Q: What happens if my brain gets damaged while in the jar?</h3>
+								<h4 class="faq__questions--question2">A: Don't worry, we've got you covered! Our team of expert brain surgeons can repair any 
+									damage to your brain, no matter how severe. Plus, we offer a lifetime warranty on all of our jars, so you can rest assured 
+									that your brain is in good hands.</h4>
+							</div>
+							<div class="faq__questions--question">
+								<h3 class="faq__questions--question1">Q: Can I share my brain in a jar with others?</h3>
+								<h4 class="faq__questions--question2">A: Absolutely! Our jars are fully transferable, so you can easily swap brains with your 
+									friends and family. Just make sure to label the jars correctly so you don't end up with someone else's thoughts and memories.</h4>
+							</div>
+							<div class="faq__questions--question">
+								<h3 class="faq__questions--question1">Q: What happens to my body once my brain is in the jar?</h3>
+								<h4 class="faq__questions--question2">A: Who cares? You won't need it anymore! Just kick back, relax, and enjoy life as a disembodied 
+									brain. It's the ultimate braincation!</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<section id="review" class="review__background">
 
 			</section>
 
-			<section></section>
+			<section class="braincation__background">
 
-			<section></section>
-			
-			<section></section>
-
-			<section></section>
+			</section>
 
 		</div>
 			<footer>
@@ -47,6 +107,5 @@
 				</div>
 			</footer>
 		</div>
-	</div>
 	</body>
 </html>
