@@ -5,4 +5,10 @@
 @import 'base.css';
 
 @import './modules/navigation.css';
+
+/* Sections */
 @import './modules/hero.css';
+@import './modules/about.css';
+@import './modules/faq.css';
+@import './modules/review.css';
+@import './modules/braincation.css';
