@@ -1,0 +1,38 @@
+.about__background {
+	width: 100%;
+	height: 100vh;
+	background-image: url('/_app/assets/section-image/about.png');
+	background-position: 100vw center;
+	background-size: cover;
+	background-repeat: no-repeat;
+ }
+
+.about {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: repeat(12, 1fr);
+	height: 100vh;
+}
+
+.about__textbox {
+	grid-column: 2 / span 6;
+	grid-row: 4 / span 5;
+}
+
+.about__textbox--heading1 {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 1.2em;
+	line-height: 1.1em;
+	color: #000000;
+}
+
+.about__textbox--heading2 {
+	font-family: 'Manrope';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 0.9em;
+	line-height: 1.5em;
+	color: #000000;
+}
