@@ -3,22 +3,21 @@ body {
 	font-size: 1.5vw;
 	background: var(--color-background);
 	color: var(--color-foreground);
-	text-transform: uppercase;
 	-webkit-font-smoothing: antialiased;
 }
 
 .content {
 	display: flex;
+	flex-direction: column;
+}
+
+section {
+	height: 100vh;
+	scroll-snap-align: start;
 }
 
 a:hover {
 	text-decoration: underline;
-}
-
-@media (max-width: 1024px) {
-	body {
-		font-size: 5vw;
-	}
 }
 
 @media (min-width: 1920px) {
