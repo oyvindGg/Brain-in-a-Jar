@@ -28,7 +28,7 @@ Midjourney AI
 ```
 
 ## Deployment
-The website is deployed using Sanity Studio and Netlify.
+The website is deployed using Sanity Studio and [Netlify](https://braininajar.netlify.app).
 
 ## How to Run
 To run the project locally, follow these steps:
