@@ -36,7 +36,3 @@ To run the project locally, follow these steps:
 1. Clone the repository: git clone https://github.com/0yvz/Brain-in-a-jar.git
 2. Open the project directory: cd brain-in-a-jar
 3. Open index.html in your browser to view the website.
-
-## License
-This project is licensed under the MIT License.
-
