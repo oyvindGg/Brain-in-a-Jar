@@ -6,19 +6,48 @@
 		<title>Put Your Brain in a Jar</title>
 		<link rel="shortcut icon" type="image/x-icon" href="./_app/assets/favicon-focus.png">
 		
-		<link rel="stylesheet" href="./_app/css/main.css">
-		<script type="module" src="./_app/js/main.js"></script>
+		<link rel="stylesheet" href="../_app/css/main.css">
+		<script type="module" src="../_app/js/main.js"></script>
 	</head>
-	
 	<body>
-		<header class="main__header grid">
-			<div class="grid__column--8 navigation">
-				<div class="grid">
-					<div class="navbar__logo"></div>
-					<div class="navbar__items"></div>
+		<div class="shop__grid">
+		<header class="shop__navigation">
+			<div class="shop__navigation--box">
+				 <div class="shop__navigation--box--logo">
+					<a href="#home"><img src="../_app/assets/logolight.png" alt="logo"></a>
 				</div>
-			</div>
-		</header>
+				 	<nav class="shop__navigation--box--items">
+						<ul>
+							<li><a href="#about">About</a></li>
+							<li><a href="#faq">F.A.Q</a></li>
+							<li><a href="#review">Reviews</a></li>
+						</ul>
+					</nav>
 
+				<a href="/shop/index.html" 
+					class="shop__navigation--box--button">
+					Buy a jar <i class="material-symbols-outlined">start</i>
+				</a>
+			</div>
+		 </header>
+		<div class="shop__preview-image"></div>
+		<div class="shop__customise--box">
+			<h2>Customize your Brain in a Jar</h2>
+			<div class="shop__customise--color">
+				<h3>Select a color:</h3>
+				<button class="base"></button>
+				<button class="blue"></button>
+				<button class="green"></button>
+				<button class="purple"></button>
+				<button class="red"></button>
+			</div>
+			<div class="shop__customise--material">
+				<h3>Select a material:</h3>
+				<button class="base"></button>
+				<button class="marble"></button>
+				<button class="wood"></button>
+			</div>
+		</div>
+		<div class="shop__price--box"></div>
 	</body>
 </html>
