@@ -14,7 +14,8 @@
 }
 
 .shop__navigation--box--items {
-	display: flex;
+	justify-self: center;
+	float: center;
 	justify-content: space-evenly;
 	align-items: center;
 	font-family: 'Helvetica Neue';
@@ -30,7 +31,8 @@
 	display: flex;
 }
 
-.shop__navigation--box--items {
+.shop__navigation--box--items li {
+	font-size: 0.8em;
 	margin: 0 2em;
 	text-align: center;
 }
