@@ -5,7 +5,6 @@
 
 	--color-box-background: #FFFFFF;
 	--color-box-foreground: var(--color-foreground);
-	--color-cart-empty-background: #aaa;
 
 	--gap-column: 1rem;
 	--gap-padding: 1rem;
@@ -13,4 +12,7 @@
 
 	--gap-box-padding: 1rem;
 	--gap-button-padding: 0.5rem;
+
+	--shop-box-style: -16px -16px 40px rgba(255, 255, 255, 0.8), 16px 4px 64px rgba(18, 61, 101, 0.3), inset -8px -6px 80px rgba(255, 255, 255, 0.18);
+	--shop-box-radius: 20px;
 }
