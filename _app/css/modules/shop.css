@@ -2,11 +2,6 @@ body {
 	background-color: #EBF3FA;
 }
 
-div {
-	box-shadow: -16px -16px 40px rgba(255, 255, 255, 0.8), 16px 4px 64px rgba(18, 61, 101, 0.3), inset -8px -6px 80px rgba(255, 255, 255, 0.18);
-	border-radius: 20px;
-}
-
 .shop__grid {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
@@ -16,8 +11,6 @@ div {
 	height: 100vh;
 	margin: 0 auto;
 	padding: 0 var(--gap-column);
-	box-shadow: none;
-	border-radius: none;
 }
 
 .shop__preview-image {
@@ -27,7 +20,8 @@ div {
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
-
+	box-shadow: var(--shop-box-style);
+	border-radius: var(--shop-box-radius);
 }
 
 .shop__customise--box {
@@ -36,6 +30,8 @@ div {
 	padding: 2.3rem;
 	background: linear-gradient(120deg, #EBF2F9 19.14%, #C6D7EB 154.68%);
 	word-wrap: break-word;
+	box-shadow: var(--shop-box-style);
+	border-radius: var(--shop-box-radius);
 }
 
 .shop__customise--color{
@@ -44,6 +40,7 @@ div {
 	box-shadow: none;
 	border-radius: none;
 }
+
 .shop__customise--material{
 	font-size: 0.8;
 	margin-top: 0.8em;
@@ -123,6 +120,8 @@ button:hover {
 	grid-row: 11 / span 1;
 	background: linear-gradient(120deg, #EBF2F9 19.14%, #C6D7EB 154.68%);
 	padding: 1.5rem;
+	box-shadow: var(--shop-box-style);
+	border-radius: var(--shop-box-radius);
 }
 
 .shop__price--box--price {
