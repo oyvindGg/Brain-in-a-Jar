@@ -83,33 +83,37 @@ button:hover {
 	cursor: crosshair;
 }
 
-.base {
+.color-base {
 	background-color: #eeeeee;
 	border: 1px solid rgb(216, 216, 216);
- }
- 
-.blue {
+}
+.color-blue {
 	background-color: #1bdcea;
 }
 
-.green {
+.color-green {
 	background-color: #24cc45;
 }
-.purple {
+.color-purple {
 	background-color: #cda9ff;
 }
 
-.red {
+.color-red {
 	background-color: #ff9292;
 }
-.marble {
-	background: url('/_app/assets//materials/marble.png');
+
+.material-base {
+	background-color: #eeeeee;
+	border: 1px solid rgb(216, 216, 216);
+}
+.material-marble {
+	background: url('/_app/assets/materials/marble.png');
 	background-repeat: no-repeat;
 	background-size: fill;
 	border: solid 0.1px #000000;
 }
-.wood {
-	background: url('/_app/assets//materials/wood.png');
+.material-wood {
+	background: url('/_app/assets/materials/wood.png');
 	background-repeat: no-repeat;
 	background-size: fill;
 	border: solid 0.1px #000000;
