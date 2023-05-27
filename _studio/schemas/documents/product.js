@@ -29,10 +29,10 @@ export default {
 			options: {
 				list: [
 					{ title: 'Base', value: 'base' },
-					{ title: 'Blue', value: 'b' },
-					{ title: 'Green', value: 'g' },
-					{ title: 'Purple', value: 'p' },
-					{ title: 'Red', value: 'r' },
+					{ title: 'Blue', value: 'blue' },
+					{ title: 'Green', value: 'green' },
+					{ title: 'Purple', value: 'purple' },
+					{ title: 'Red', value: 'red' },
 				]
 			}
 		},
@@ -57,8 +57,8 @@ export default {
 			}
 		},
 		{
-			title: 'Preview',
-			name: 'preview',
+			title: 'Preview image',
+			name: 'previewimage',
 			type: 'image',
 		}
 	]
