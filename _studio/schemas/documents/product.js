@@ -23,43 +23,56 @@ export default {
 			type: 'number',
 		},
 		{
-			title: 'Color',
-			name: 'color',
-			type: 'string',
-			options: {
-				list: [
-					{ title: 'Base', value: 'base' },
-					{ title: 'Blue', value: 'blue' },
-					{ title: 'Green', value: 'green' },
-					{ title: 'Purple', value: 'purple' },
-					{ title: 'Red', value: 'red' },
-				]
-			}
-		},
-		{
-			title: 'Material',
-			name: 'material',
-			type: 'string',
-			options: {
-				list: [
-					{ title: 'Base', value: 'base'},
-					{ title: 'Marble', value: 'marble'},
-					{ title: 'Wood', value: 'wood'},
-				]
-			}
-		},
-		{
-			title: 'Flower',
-			name: 'flower',
-			type: 'boolean',
-			options: {
-				layout: 'checkbox'
-			}
-		},
-		{
-			title: 'Preview image',
-			name: 'previewimage',
-			type: 'image',
-		}
-	]
-}
+			title: 'Color and Material',
+			name: 'colorMaterial',
+			type: 'array',
+			of: [
+			  {
+				 type: 'object',
+				 name: 'combination',
+				 fields: [
+					{
+					  title: 'Color',
+					  name: 'color',
+					  type: 'string',
+					  options: {
+						 list: [
+							{ title: 'Base', value: 'base' },
+							{ title: 'Blue', value: 'blue' },
+							{ title: 'Green', value: 'green' },
+							{ title: 'Purple', value: 'purple' },
+							{ title: 'Red', value: 'red' },
+						 ],
+					  },
+					},
+					{
+					  title: 'Material',
+					  name: 'material',
+					  type: 'string',
+					  options: {
+						 list: [
+							{ title: 'Base', value: 'base' },
+							{ title: 'Marble', value: 'marble' },
+							{ title: 'Wood', value: 'wood' },
+						 ],
+					  },
+					},
+					{
+					  title: 'Flower',
+					  name: 'flower',
+					  type: 'boolean',
+					  options: {
+						 layout: 'checkbox',
+					  },
+					},
+					{
+					  title: 'Preview Image',
+					  name: 'previewImage',
+					  type: 'image',
+					},
+				 ],
+			  },
+			],
+		 },
+	  ],
+	};
