@@ -1,8 +1,8 @@
 body {
-	background-color: #EBF3FA;
-}
-
-.shop__grid {
+	background-color: #ebf3fa;
+ }
+ 
+ .shop__grid {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
 	grid-template-rows: repeat(12, 1fr);
@@ -11,9 +11,9 @@ body {
 	height: 100vh;
 	margin: 0 auto;
 	padding: 0 var(--gap-column);
-}
-
-.shop__preview-image {
+ }
+ 
+ .shop__preview-image {
 	grid-column: 1 / span 4;
 	grid-row: 3 / span 7;
 	background-image: url('/_app/assets/base.png');
@@ -22,119 +22,133 @@ body {
 	background-repeat: no-repeat;
 	box-shadow: var(--shop-box-style);
 	border-radius: var(--shop-box-radius);
-}
-
-.shop__customise--box {
+ }
+ 
+ .shop__customise--box {
 	grid-column: 6 / span 7;
 	grid-row: 3 / span 7;
 	padding: 2.3rem;
-	background: linear-gradient(120deg, #EBF2F9 19.14%, #C6D7EB 154.68%);
+	background: linear-gradient(120deg, #ebf2f9 19.14%, #c6d7eb 154.68%);
 	word-wrap: break-word;
 	box-shadow: var(--shop-box-style);
 	border-radius: var(--shop-box-radius);
-}
-
-.shop__customise--color{
+ }
+ 
+ .shop__customise--color {
 	font-size: 0.8;
 	margin-top: 0.8em;
 	box-shadow: none;
 	border-radius: none;
-}
-
-.shop__customise--material{
+ }
+ 
+ .shop__customise--material {
 	font-size: 0.8;
 	margin-top: 0.8em;
 	box-shadow: none;
 	border-radius: none;
-}
-
-h2 {
+ }
+ 
+ h2 {
 	font-family: 'Manrope';
 	font-style: normal;
 	font-weight: 500;
 	font-size: 32px;
 	line-height: normal;
-}
-
-h4 {
+ }
+ 
+ h4 {
 	font-family: 'Manrope';
 	font-style: normal;
 	font-weight: 500;
 	font-size: 18px;
 	line-height: normal;
-}
-
-h3 {
+ }
+ 
+ h3 {
 	font-family: 'Manrope';
 	font-style: normal;
 	font-weight: 500;
 	font-size: 20px;
 	line-height: 2.5em;
-}
-
-button {
+ }
+ 
+ button {
 	width: 9em;
 	height: 2.5em;
 	cursor: crosshair;
-}
-button:hover {
+ }
+ 
+ button:hover {
 	width: 9em;
 	height: 2.5em;
 	cursor: crosshair;
-}
-
-.color-base {
+ }
+ 
+ .color-base {
+	background-image: none;
 	background-color: #eeeeee;
 	border: 1px solid rgb(216, 216, 216);
-}
-.color-blue {
+ }
+ 
+ .color-blue {
+	background-image: none;
 	background-color: #1bdcea;
-}
-
-.color-green {
+ }
+ 
+ .color-green {
+	background-image: none;
 	background-color: #24cc45;
-}
-.color-purple {
+ }
+ 
+ .color-purple {
+	background-image: none;
 	background-color: #cda9ff;
-}
-
-.color-red {
+ }
+ 
+ .color-red {
+	background-image: none;
 	background-color: #ff9292;
-}
-
-.material-base {
+ }
+ 
+ .material-base {
+	background-image: none;
 	background-color: #eeeeee;
 	border: 1px solid rgb(216, 216, 216);
-}
-.material-marble {
-	background: url('/_app/assets/materials/marble.png');
+ }
+ 
+ .material-marble {
+	background-image: url('/_app/assets/materials/marble.png');
 	background-repeat: no-repeat;
-	background-size: fill;
+	background-size: cover;
 	border: solid 0.1px #000000;
-}
-.material-wood {
-	background: url('/_app/assets/materials/wood.png');
+ }
+ 
+ .material-wood {
+	background-image: url('/_app/assets/materials/wood.png');
 	background-repeat: no-repeat;
-	background-size: fill;
+	background-size: cover;
 	border: solid 0.1px #000000;
-}
-
-.shop__price--box {
+ }
+ 
+ .shop__price--box {
 	grid-column: 1 / span 12;
 	grid-row: 11 / span 1;
-	background: linear-gradient(120deg, #EBF2F9 19.14%, #C6D7EB 154.68%);
+	background: linear-gradient(120deg, #ebf2f9 19.14%, #c6d7eb 154.68%);
 	padding: 1.5rem;
 	box-shadow: var(--shop-box-style);
 	border-radius: var(--shop-box-radius);
-}
-
-.shop__price--box--price {
+ }
+ 
+ .shop__price--box--price {
 	float: left;
-}
-.shop__price--box--button {
+ }
+ 
+ .shop__price--box--button {
 	background: none;
 	float: right;
-}
-.shop__price--box--button:hover {
+ }
+ 
+ .shop__price--box--button:hover {
 	text-decoration: underline;
-}
+ }
+ 
