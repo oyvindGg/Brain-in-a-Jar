@@ -4,11 +4,11 @@ export default async function shopCustomisation() {
   async function handleFormSubmit(event, form) {
     try {
       event.preventDefault();
-
+  
       // Fetch color and material options
       const colorOptions = await fetchColorOptions();
       const materialOptions = await fetchMaterialOptions();
-
+  
       console.log('Color options:', colorOptions);
       console.log('Material options:', materialOptions);
 
@@ -21,6 +21,11 @@ export default async function shopCustomisation() {
         button.addEventListener('click', () => handleColorSelection(option));
         colorButtonsContainer.appendChild(button);
       });
+
+      // Add event listener to flower checkbox
+        const flowerCheckbox = form.elements.flower;
+        flowerCheckbox.addEventListener('change', () => handleFlowerSelection(flowerCheckbox));
+
 
       // Generate material option buttons if there are options available
       const materialButtonsContainer = document.querySelector('#material');
@@ -43,7 +48,7 @@ export default async function shopCustomisation() {
       form.reset();
 
       // Update the preview image
-      updatePreviewImage(form);
+      await updatePreviewImage(form);
 
     } catch (error) {
       console.error('Error in handleFormSubmit:', error);
@@ -51,38 +56,44 @@ export default async function shopCustomisation() {
   }
 
   async function updatePreviewImage(form) {
-    const colorImageUrl = form.elements.color.dataset.imageUrl || '';
-    const materialImageUrl = form.elements.material.dataset.imageUrl || '';
+    const colorImageUrl = form.elements.color.getAttribute('data-image-url') || '';
+    const materialImageUrl = form.elements.material.getAttribute('data-image-url') || '';    
     const hasFlower = form.elements.flower.checked;
-
+  
+    console.log('colorImageUrl:', colorImageUrl);
+    console.log('materialImageUrl:', materialImageUrl);
+    console.log('hasFlower:', hasFlower);
+  
     const previewImage = document.querySelector('.shop__preview-image');
-
+  
     // Remove any existing background image styles
     previewImage.style.backgroundImage = '';
-
+  
     // Create an array to hold the URLs of the selected images
     const imageUrls = [];
-
+  
     // Add the color image URL
     if (colorImageUrl) {
       imageUrls.push(`url("${colorImageUrl}")`);
     }
-
+  
     // Add the material image URL
     if (materialImageUrl) {
       imageUrls.push(`url("${materialImageUrl}")`);
     }
-
+  
     // Add the flower image URL if flowers are selected
     if (hasFlower && materialImageUrl) {
       const flowerImageUrl = materialImageUrl.replace(/(\.[\w\d_-]+)$/i, '-flower$1');
       imageUrls.push(`url("${flowerImageUrl}")`);
     }
-
+  
     // Set the background image using the joined URLs
     console.log('Image URLs:', imageUrls.join(', '));
     previewImage.style.backgroundImage = imageUrls.join(', ');
+    console.log('Preview Image Style:', previewImage.style.backgroundImage);
   }
+  
 
   async function fetchColorOptions() {
     const query = `*[ _type == 'product' ] {
@@ -133,26 +144,27 @@ export default async function shopCustomisation() {
     button.className = buttonClass;
     button.textContent = option.color;
     button.value = option.color;
-
-    if (option.previewImage?.asset?.url) {
-      const imageUrl = option.previewImage.asset.url;
-
-      button.dataset.imageUrl = option.previewImage.asset.url; // Set the dataset property to the image URL
-
+  
+    if (option.previewImage?.url) {
+      const imageUrl = option.previewImage.url;
+  
+      button.dataset.imageUrl = imageUrl; // Set the dataset property to the image URL
+  
       // Set the background image using the style attribute
       button.style.backgroundImage = `url("${imageUrl}")`;
       button.style.backgroundSize = 'cover';
       button.style.backgroundPosition = 'center center';
       button.style.backgroundRepeat = 'no-repeat';
     }
-
+  
     return button;
   }
 
-  async function handleColorSelection(option) {
+  function handleColorSelection(option) {
     const form = document.querySelector('#product-form');
     form.elements.color.value = option.color;
-    form.elements.color.dataset.imageUrl = option.previewImage.asset.url;
+    form.elements.color.dataset.imageUrl = option.previewImage?.url || '';
+  
 
     // Clear the material buttons container
     const materialButtonsContainer = document.querySelector('#material');
@@ -179,10 +191,17 @@ export default async function shopCustomisation() {
   function handleMaterialSelection(option) {
     const form = document.querySelector('#product-form');
     form.elements.material.value = option.material;
-    form.elements.material.dataset.imageUrl = option.previewImage.asset.url;
+    form.elements.material.dataset.imageUrl = option.previewImage?.url || '';
+  
 
     updatePreviewImage(form); // Update the preview image with the new material selection
   }
+
+  function handleFlowerSelection(checkbox) {
+    const form = document.querySelector('#product-form');
+    updatePreviewImage(form); // Update the preview image with the new flower selection
+  }
+  
 
   const form = document.querySelector('#product-form');
   form.addEventListener('submit', (event) => {
