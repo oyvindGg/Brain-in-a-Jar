@@ -12,13 +12,13 @@ export default async function shopCustomisation() {
       console.log('Color options:', colorOptions);
       console.log('Material options:', materialOptions);
 
-      // Generate color option buttons
+      // Add event listeners to color, material, and flower options
       const colorButtonsContainer = document.querySelector('#color');
       colorButtonsContainer.innerHTML = '';
 
       colorOptions.forEach((option) => {
         const button = createOptionButton(option, 'color-button');
-        button.addEventListener('click', handleColorSelection);
+        button.addEventListener('click', () => handleColorSelection(option));
         colorButtonsContainer.appendChild(button);
       });
 
@@ -29,7 +29,7 @@ export default async function shopCustomisation() {
       if (materialOptions.length > 0) {
         materialOptions.forEach((option) => {
           const button = createOptionButton(option, 'material-button');
-          button.addEventListener('click', handleMaterialSelection);
+          button.addEventListener('click', () => handleMaterialSelection(option));
           materialButtonsContainer.appendChild(button);
         });
       } else {
@@ -50,15 +50,48 @@ export default async function shopCustomisation() {
     }
   }
 
-  // Fetch the color options
+  function updatePreviewImage(form) {
+    const colorImageUrl = form.elements.color.dataset.imageUrl || '';
+    const materialImageUrl = form.elements.material.dataset.imageUrl || '';
+    const hasFlower = form.elements.flower.checked;
+
+    const previewImage = document.querySelector('.shop__preview-image');
+
+    // Remove any existing background image styles
+    previewImage.style.backgroundImage = '';
+
+    // Create an array to hold the URLs of the selected images
+    const imageUrls = [];
+
+    // Add the color image URL
+    if (colorImageUrl) {
+      imageUrls.push(`url("${colorImageUrl}")`);
+    }
+
+    // Add the material image URL
+    if (materialImageUrl) {
+      imageUrls.push(`url("${materialImageUrl}")`);
+    }
+
+    // Add the flower image URL if flowers are selected
+    if (hasFlower && materialImageUrl) {
+      const flowerImageUrl = materialImageUrl.replace(/(\.[\w\d_-]+)$/i, '-flower$1');
+      imageUrls.push(`url("${flowerImageUrl}")`);
+    }
+
+    // Set the background image using the joined URLs
+    console.log('Image URLs:', imageUrls.join(', '));
+    previewImage.style.backgroundImage = imageUrls.join(', ');
+  }
+
   async function fetchColorOptions() {
     const query = `*[ _type == 'product' ] {
       'colorMaterial': colorMaterial[]{
         'color': color,
         'material': material,
         'flower': flower,
-        'previewImage': previewImage->{
-          'asset': asset->{ url }
+        'previewImage': previewImage.asset->{
+          url
         }
       }
     }`;
@@ -66,9 +99,8 @@ export default async function shopCustomisation() {
     const response = await sanity.fetch(query);
     const colorOptions = response.flatMap((product) => product.colorMaterial);
 
-    // Remove duplicates based on the 'color', 'material', and 'flower' properties
     const uniqueColorOptions = Array.from(
-      new Set(colorOptions.map((option) => JSON.stringify(option))),
+      new Set(colorOptions.map((option) => JSON.stringify(option)))
     ).map((stringified) => JSON.parse(stringified));
 
     return uniqueColorOptions;
@@ -80,8 +112,8 @@ export default async function shopCustomisation() {
         'color': color,
         'material': material,
         'flower': flower,
-        'previewImage': previewImage->{
-          'asset': asset->{ url }
+        'previewImage': previewImage.asset->{
+          url
         }
       }
     }`;
@@ -89,9 +121,8 @@ export default async function shopCustomisation() {
     const response = await sanity.fetch(query);
     const materialOptions = response.flatMap((product) => product.colorMaterial);
 
-    // Remove duplicates based on the 'color', 'material', and 'flower' properties
     const uniqueMaterialOptions = Array.from(
-      new Set(materialOptions.map((option) => JSON.stringify(option))),
+      new Set(materialOptions.map((option) => JSON.stringify(option)))
     ).map((stringified) => JSON.parse(stringified));
 
     return uniqueMaterialOptions;
@@ -100,99 +131,64 @@ export default async function shopCustomisation() {
   function createOptionButton(option, buttonClass) {
     const button = document.createElement('button');
     button.className = buttonClass;
-    button.textContent = option.title;
-    button.value = option.value;
-  
-    if (option.previewImage && option.previewImage.asset && option.previewImage.asset.url) {
+    button.textContent = option.color;
+    button.value = option.color;
+
+    if (option.previewImage?.asset?.url) {
       const imageUrl = option.previewImage.asset.url;
-  
-      button.dataset.imageId = option.previewImage._ref; // Set the dataset property to the image reference ID
-      button.dataset.imageUrl = imageUrl; // Set the dataset property to the image URL
-  
-      // Set the background image using the background-image CSS property
-      button.style.backgroundImage = `url(${imageUrl})`;
+
+      button.dataset.imageUrl = option.previewImage.asset.url; // Set the dataset property to the image URL
+
+      // Set the background image using the style attribute
+      button.style.backgroundImage = `url("${imageUrl}")`;
+      button.style.backgroundSize = 'cover';
+      button.style.backgroundPosition = 'center center';
+      button.style.backgroundRepeat = 'no-repeat';
     }
-  
-    if (buttonClass === 'color-button') {
-      button.addEventListener('click', handleColorSelection);
-    } else if (buttonClass === 'material-button') {
-      button.addEventListener('click', handleMaterialSelection);
-    }
-  
+
     return button;
   }
-  
-  
-  
-  
-  
-  function handleColorSelection(event) {
-    const color = event.target.value;
-    console.log('Selected color:', color);
 
+  async function handleColorSelection(option) {
     const form = document.querySelector('#product-form');
-    console.log('Form:', form);
+    form.elements.color.value = option.color;
+    form.elements.color.dataset.imageUrl = option.previewImage.asset.url;
 
-    form.elements.color.value = color;
-    form.elements.color.dataset.imageId = event.target.dataset.imageId;
-    form.elements.color.dataset.imageUrl = event.target.dataset.imageUrl; // Add this line
+    // Clear the material buttons container
+    const materialButtonsContainer = document.querySelector('#material');
+    materialButtonsContainer.innerHTML = '';
 
-    updatePreviewImage(form);
-  }
-
-  function handleMaterialSelection(event) {
-    const material = event.target.value;
-    console.log('Selected material:', material);
-
-    const form = document.querySelector('#product-form');
-    console.log('Form:', form);
-
-    form.elements.material.value = material;
-    form.elements.material.dataset.imageId = event.target.dataset.imageId;
-    form.elements.material.dataset.imageUrl = event.target.dataset.imageUrl; // Add this line
-
-    updatePreviewImage(form);
-  }
-
-  function updatePreviewImage(form) {
-    const colorImageUrl = form.elements.color.dataset.imageUrl || '';
-    const materialImageUrl = form.elements.material.dataset.imageUrl || '';
-    const hasFlower = form.elements.flower.checked;
-
-    const previewImage = document.querySelector('.shop__preview-image');
-    const previewImageUrl = getPreviewImageUrl(colorImageUrl, materialImageUrl, hasFlower);
-
-    console.log('Color image URL:', colorImageUrl);
-    console.log('Material image URL:', materialImageUrl);
-
-    // Set the background-image style property
-    previewImage.style.backgroundImage = `url("${previewImageUrl}")`;
-  }
-
-  function getPreviewImageUrl(colorImageUrl, materialImageUrl) {
-    if (colorImageUrl && materialImageUrl) {
-      const colorExtension = getColorExtension(colorImageUrl);
-      const materialExtension = getMaterialExtension(materialImageUrl);
-      return `${colorImageUrl}${colorExtension},${materialImageUrl}${materialExtension}`;
-    } else if (colorImageUrl) {
-      return colorImageUrl;
-    } else if (materialImageUrl) {
-      return materialImageUrl;
+    // Generate material option buttons if there are options available
+    if (option.materials && option.materials.length > 0) {
+      option.materials.forEach((materialOption) => {
+        const button = createOptionButton(materialOption, 'material-button');
+        button.addEventListener('click', () => handleMaterialSelection(materialOption));
+        materialButtonsContainer.appendChild(button);
+      });
     } else {
-      return '';
+      // Handle the scenario when there are no material options
+      const noMaterialOption = document.createElement('p');
+      noMaterialOption.textContent = 'No material options available.';
+      materialButtonsContainer.appendChild(noMaterialOption);
     }
+
+    // Update the preview image
+    updatePreviewImage(form);
   }
 
-  function getColorExtension(colorImageUrl) {
-    return colorImageUrl.substr(colorImageUrl.lastIndexOf('.'));
-  }
+  function handleMaterialSelection(option) {
+    const form = document.querySelector('#product-form');
+    form.elements.material.value = option.material;
+    form.elements.material.dataset.imageUrl = option.previewImage.asset.url;
 
-  function getMaterialExtension(materialImageUrl) {
-    return materialImageUrl.substr(materialImageUrl.lastIndexOf('.'));
+    updatePreviewImage(form); // Update the preview image with the new material selection
   }
 
   const form = document.querySelector('#product-form');
-  form.addEventListener('submit', (event) => handleFormSubmit(event, form));
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    handleFormSubmit(event, form).catch(error => console.error('Error in form submission:', error));
+  });
 
   // Fetch the color and material options and update the UI
   await handleFormSubmit(new Event('submit'), form);
