@@ -50,7 +50,7 @@ export default async function shopCustomisation() {
     }
   }
 
-  function updatePreviewImage(form) {
+  async function updatePreviewImage(form) {
     const colorImageUrl = form.elements.color.dataset.imageUrl || '';
     const materialImageUrl = form.elements.material.dataset.imageUrl || '';
     const hasFlower = form.elements.flower.checked;
