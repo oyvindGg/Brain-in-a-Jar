@@ -5,6 +5,8 @@ export default async function shopCustomisation() {
   let materialOption = "base";
   let flowerOption = false;
   const shopPreviewImage = document.querySelector(".shop__preview-image");
+  let productPrice = 0;
+  const shopPriceBox = document.querySelector(".shop__price--box--price");
   let colorOptions = [];
 
   async function handleFormSubmit(event, form) {
@@ -27,7 +29,7 @@ export default async function shopCustomisation() {
         if (option) {
           button.addEventListener("click", () => {
             colorOption = option.color;
-            findCorrectURL();
+            updateProduct();
           });
         }
       });
@@ -38,14 +40,14 @@ export default async function shopCustomisation() {
         if (option) {
           button.addEventListener("click", () => {
             materialOption = option.material;
-            findCorrectURL();
+            updateProduct();
           });
         }
       });
 
       flowerCheckbox.addEventListener("change", () => {
         flowerOption = flowerCheckbox.checked;
-        findCorrectURL();
+        updateProduct();
       });
 
       
@@ -54,19 +56,20 @@ export default async function shopCustomisation() {
     }
  }
 
-    // Find the right URL address to the product image
-    function findCorrectURL() {
+    // Find the right URL address to the unique product image
+    function updateProduct() {
         const option = colorOptions.find((opt) => opt.color === colorOption && opt.material === materialOption && opt.flower === flowerOption);
 
         if (option) {
         shopPreviewImage.style.backgroundImage = `url("${option.previewImage.url}")`;
+        shopPriceBox.innerText = `€ ${option.price.toFixed(2)}`;
         }
     }
 
     // Fetch the product details from Sanity
     async function fetchColorOptions() {
         const query = `*[ _type == 'product' ] {
-        'colorMaterial': colorMaterial[]{
+            'colorMaterial': colorMaterial[]{
             'color': color,
             'material': material,
             'flower': flower,
