@@ -5,4 +5,38 @@
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
+	position: relative;
  }
+
+footer {
+	z-index: 999;
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	height: 9rem;
+
+	background: linear-gradient(0deg, rgba(244, 170, 121, 0.5), rgba(244, 170, 121, 0.5)), linear-gradient(90deg, #A14B47 0%, #FDE09F 100%);
+	border: 1px solid #FDD094;
+	box-shadow: inset 0px 18px 33px -5px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+	display: flex;
+	padding: 2rem;
+	justify-content: space-between;
+}
+
+.footer__logo-git {
+	width: 4rem;
+	height: 4rem;
+	background-image: url('/_app/assets/github.png');
+	background-size: cover;
+	float: left;
+}
+.footer__logo-linked {
+	width: 3rem;
+	height: 3rem;
+	background-image: url('/_app/assets/linkedin.png');
+	background-size: cover;
+	float: left;
+}
