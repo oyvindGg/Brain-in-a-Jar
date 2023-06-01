@@ -30,37 +30,41 @@
 			</header>
 			<div class="shop__preview-image"></div>
 			<div class="shop__customise--box">
-				<h2>Customize your Brain in a Jar</h2>
-				<h4>Customize your brain in a jar with our selection of materials for the stand and vibrant colors 
+				<h2 class="shop__customise--box--text">Customize your Brain in a Jar</h2>
+				<h4 class="shop__customise--box--text">Customize your brain in a jar with our selection of materials for the stand and vibrant colors 
 					for the liquid. Create a brain jar that reflects your unique style and stands out in any room. 
 					Personalize your braincation experience like never before.</h4>
 				<br>
 				<form id="product-form">
-					<input type="hidden" id="color" name="color" value="" class="shop__customise--color">
-					<h3>Select a color:</h3>
-					<button class="color-button color-base" id="base" ></button>
-					<button class="color-button color-blue" id="blue"></button>
-					<button class="color-button color-green" id="green"></button>
-					<button class="color-button color-purple" id="purple"></button>
-					<button class="color-button color-red" id="red"></button>
-				
-					<input type="hidden" id="material" name="material" value="" class="shop__customise--material">
-					<h3>Select a material:</h3>
-					<button class="material-button material-base" id="base"></button>
-					<button class="material-button material-marble" id="marble"></button>
-					<button class="material-button material-wood" id="wood"></button>
-				
+					<div class="shop__customise--color">
+						<input type="hidden" id="color" name="color" value="">
+						<h3 class="shop__customise--box--text">Select a color:</h3>
+						<button class="color-button color-base" id="base" ></button>
+						<button class="color-button color-blue" id="blue"></button>
+						<button class="color-button color-green" id="green"></button>
+						<button class="color-button color-purple" id="purple"></button>
+						<button class="color-button color-red" id="red"></button>
+					</div>
+					<br>
+					<div class="shop__customise--material">
+						<input type="hidden" id="material" name="material" value="">
+						<h3 class="shop__customise--box--text">Select a material:</h3>
+						<button class="material-button material-base" id="base"></button>
+						<button class="material-button material-marble" id="marble"></button>
+						<button class="material-button material-wood" id="wood"></button>
+					</div>
+					<br>
 					<div class="shop__customise--flower">
-					  <label for="flower">
-						  <h3>Add Flowers:</h3>
-					  </label>
-					  <input type="checkbox" id="flower" name="flower">
+					  <label class="toggle">
+						<input class="toggle-checkbox" type="checkbox" id="flower" name="flower">
+						<div class="toggle-switch"></div>
+						<span class="toggle-label">Flowers</span>
+					 </label>
 					</div>
 				</form>  			 
 			</div>
-
 			<div class="shop__price--box">
-				<h2 class="shop__price--box--price">€ 2999,99</h2>
+				<h2 class="shop__price--box--price">€ </h2>
 				<button type="submit" class="shop__price--box--button">
 					<h3>Add to cart</h3>
 				</button>

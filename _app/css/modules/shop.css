@@ -1,8 +1,8 @@
 body {
 	background-color: #ebf3fa;
- }
- 
- .shop__grid {
+}
+
+.shop__grid {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
 	grid-template-rows: repeat(12, 1fr);
@@ -11,144 +11,219 @@ body {
 	height: 100vh;
 	margin: 0 auto;
 	padding: 0 var(--gap-column);
- }
- 
- .shop__preview-image {
+}
+
+.shop__preview-image {
 	grid-column: 1 / span 4;
-	grid-row: 3 / span 7;
+	grid-row: 3 / span 8;
 	background-image: url('/_app/assets/base.png');
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
 	box-shadow: var(--shop-box-style);
 	border-radius: var(--shop-box-radius);
- }
- 
- .shop__customise--box {
+}
+
+.shop__customise--box {
 	grid-column: 6 / span 7;
-	grid-row: 3 / span 7;
+	grid-row: 3 / span 8;
 	padding: 2.3rem;
 	background: linear-gradient(120deg, #ebf2f9 19.14%, #c6d7eb 154.68%);
 	word-wrap: break-word;
 	box-shadow: var(--shop-box-style);
 	border-radius: var(--shop-box-radius);
- }
- 
- .shop__customise--color {
-	font-size: 0.8;
-	margin-top: 0.8em;
-	box-shadow: none;
-	border-radius: none;
- }
- 
- .shop__customise--material {
-	font-size: 0.8;
-	margin-top: 0.8em;
-	box-shadow: none;
-	border-radius: none;
- }
- 
- h2 {
-	font-family: 'Manrope';
+}
+
+.shop__price--box {
+	grid-column: 1 / span 12;
+	grid-row: 12 / span 1;
+	padding: 0.2rem;
+	background: linear-gradient(120deg, #ebf2f9 19.14%, #c6d7eb 154.68%);
+	box-shadow: var(--shop-box-style);
+	border-radius: var(--shop-box-radius);
+}
+
+.shop__price--box--price {
+	float: left;
+}
+
+.shop__price--box--button {
+	background: none;
+	float: right;
+}
+
+.shop__price--box--button:hover {
+	text-decoration: underline;
+}
+
+h2 {
+	font-family: 'Manrope', sans-serif;
 	font-style: normal;
 	font-weight: 500;
-	font-size: 32px;
+	font-size: 1.5rem;
 	line-height: normal;
- }
- 
- h4 {
-	font-family: 'Manrope';
+}
+
+h4 {
+	font-family: 'Manrope', sans-serif;
 	font-style: normal;
 	font-weight: 500;
-	font-size: 18px;
+	font-size: 1rem;
 	line-height: normal;
- }
- 
- h3 {
-	font-family: 'Manrope';
+}
+
+h3 {
+	font-family: 'Manrope', sans-serif;
 	font-style: normal;
 	font-weight: 500;
-	font-size: 20px;
-	line-height: 2.5em;
- }
- 
- button {
-	width: 9em;
+	font-size: 0.9rem;
+	line-height: normal;
+}
+
+button {
+	width: 4rem;
 	height: 2.5em;
+	border-radius: 0.5rem;
 	cursor: crosshair;
- }
+	transition: all 0.8s ease;
+}
+
+button:hover {
+	transform: scale(1.025);
+}
  
- button:hover {
-	width: 9em;
-	height: 2.5em;
-	cursor: crosshair;
- }
- 
- .color-base {
+button:after {
+	stroke-width: 2px;
+}
+
+.color-base {
 	background-image: none;
 	background-color: #eeeeee;
 	border: 1px solid rgb(216, 216, 216);
- }
- 
- .color-blue {
+}
+
+.color-blue {
 	background-image: none;
 	background-color: #1bdcea;
- }
- 
- .color-green {
+}
+
+.color-green {
 	background-image: none;
 	background-color: #24cc45;
- }
- 
- .color-purple {
+}
+
+.color-purple {
 	background-image: none;
 	background-color: #cda9ff;
- }
- 
- .color-red {
+}
+
+.color-red {
 	background-image: none;
 	background-color: #ff9292;
- }
- 
- .material-base {
+}
+
+.material-base {
 	background-image: none;
 	background-color: #eeeeee;
 	border: 1px solid rgb(216, 216, 216);
- }
- 
- .material-marble {
+}
+
+.material-marble {
 	background-image: url('/_app/assets/materials/marble.png');
 	background-repeat: no-repeat;
 	background-size: cover;
 	border: solid 0.1px #000000;
- }
- 
- .material-wood {
+}
+
+.material-wood {
 	background-image: url('/_app/assets/materials/wood.png');
 	background-repeat: no-repeat;
 	background-size: cover;
 	border: solid 0.1px #000000;
+}
+
+/* Toggle button taken from: https://codepen.io/alvarotrigo/pen/YzEdrKj */
+.toggle {
+	cursor: pointer;
+	display: inline-block;
  }
  
- .shop__price--box {
-	grid-column: 1 / span 12;
-	grid-row: 11 / span 1;
-	background: linear-gradient(120deg, #ebf2f9 19.14%, #c6d7eb 154.68%);
-	padding: 1.5rem;
-	box-shadow: var(--shop-box-style);
-	border-radius: var(--shop-box-radius);
+ .toggle-switch {
+	display: inline-block;
+	background: #ccc;
+	border-radius: 16px;
+	width: 58px;
+	height: 32px;
+	position: relative;
+	vertical-align: middle;
+	transition: background 0.25s;
+ }
+ .toggle-switch:before, .toggle-switch:after {
+	content: "";
+ }
+ .toggle-switch:before {
+	display: block;
+	background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+	border-radius: 50%;
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	transition: left 0.25s;
+ }
+ .toggle:hover .toggle-switch:before {
+	background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+ }
+ .toggle-checkbox:checked + .toggle-switch {
+	background-image: url('/_app/assets/materials/floral.png');
+	background-size: contain;
+ }
+ .toggle-checkbox:checked + .toggle-switch:before {
+	left: 30px;
  }
  
- .shop__price--box--price {
-	float: left;
+ .toggle-checkbox {
+	position: absolute;
+	visibility: hidden;
  }
  
- .shop__price--box--button {
-	background: none;
-	float: right;
+ .toggle-label {
+	margin-left: 5px;
+	position: relative;
+	top: 2px;
  }
- 
- .shop__price--box--button:hover {
-	text-decoration: underline;
- }
- 
+
+@media (max-width: 480px) {
+
+	.shop__navigation {
+		display: none;
+	}
+	.shop__preview-image {
+		grid-column: 1 / span 12;
+		grid-row: 2 / span 8;
+		background-size: cover;
+	}
+
+	.shop__customise--box {
+		grid-column: 1 / span 12;
+		grid-row: 10 / span 2;
+		padding: 1.5rem;
+	}
+
+	.shop__customise--box--text {
+		display: none;
+	}
+
+	.shop__price--box {
+		grid-column: 1 / span 12;
+		grid-row: 12 / span 1;
+	}
+
+	button {
+		width: 3em;
+		height: 3em;
+	}
+}
