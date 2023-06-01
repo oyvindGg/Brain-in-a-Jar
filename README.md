@@ -12,7 +12,7 @@ The website was built using HTML, CSS, and JavaScript, and utilizes the Sanity C
 ## Features
 ```
 - Landing page with a whimsical 3D-rendered brain in a jar design, with a fun and playful style.
-- Webshop where users can order their own brain in a jar.
+- Webshop where users can customise and order their own brain in a jar.
 - FAQ section to answer common questions about the service.
 - User review section with short reviews from satisfied customers.
 - Responsive design that works across desktop and mobile devices.
