@@ -13,24 +13,57 @@
 	<body>
 		<header class="navigation grid">
 			<div class="navigation__box">
-				 <div class="navigation__box--logo" href="#home">
-				</div>
+				<a href="#home"><div class="navigation__box--logo"></div></a>
 				 	<nav class="navigation__box--items">
 						<ul>
 							<li><a href="#about">About</a></li>
 							<li><a href="#faq">F.A.Q</a></li>
-							<li><a href="#review">Reviews</a></li>
+							<li><a href="#testimonials">Reviews</a></li>
+						</ul>
+					</nav>
+				 	<nav class="navigation__box--icon">
+						<ul>
+							<li>
+								<a href="#about">
+									<span class="material-symbols-outlined">
+									info
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#faq">
+									<span class="material-symbols-outlined">
+										contact_support
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#testimonials">
+									<span class="material-symbols-outlined">
+										record_voice_over
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="/shop/index.html">
+									<span class="material-symbols-outlined">
+										shopping_cart
+									</span>
+								</a>
+							</li>
 						</ul>
 					</nav>
 
-				<a href="/shop/index.html" 
-					class="navigation__box--button">
-					Buy a jar <i class="material-symbols-outlined">start</i>
+				<a href="/shop/index.html" class="navigation__box--button">
+					Buy a jar 
+					<i class="material-symbols-outlined">
+						start
+					</i>
 				</a>
 			</div>
 		 </header>
-		 <div class="content">
 
+		 <div class="content">
 			<section id="home" class="hero__background">
 					<h1 class="yourbrain">YOUR BRAIN</h1>
 					<h1 class="inajar">IN A JAR.</h1>
@@ -58,31 +91,21 @@
 				 </div>				 
 			</section>
 			
-			<section id="review" class="review__background">
-				<div class="review">
-					<div class="review__box1">
-						<div class="review__box1--user">
-							<img src="./_app/assets/user1.png" alt="user1">
-							<h3 class="review__box1--username">
-								John
-							</h3>
-							<h4 class="review__box1--usertitle">
-								Husband of Brain in a Jar user
-							</h4>
-							<h2 class="review__box1--testimonial">
-								"I have to say, I was skeptical at first when I heard about putting my wife's brain in a jar. But after months of arguing and fighting, 
-								I decided to give it a try. And let me tell you, it's been a game-changer. Now that she's in a jar, there's no more nagging or complaining, 
-								and I finally have some peace and quiet in the house. Plus, it's kind of fun to see her brain floating in there. I highly recommend Brain 
-								in a Jar for anyone looking to save their marriage."
-							</h2>
-						</div>
-					</div>
-					<div class="review__box2">
-
-					</div>
-					<div class="review__box3">
-						
-					</div>
+			<section id="testimonials" class="testimonials__background">
+				<div class="testimonials">
+				  <div class="testimonials__container"></div>
+				  <div class="testimonial__navigation">
+					 <button class="testimonial__previous">
+						<span class="material-symbols-outlined">
+							arrow_back_ios
+						</span>
+					 </button>
+					 <button class="testimonial__next">
+						<span class="material-symbols-outlined">
+							arrow_forward_ios
+						</span>
+					 </button>
+				  </div>
 				</div>
 			</section>
 
