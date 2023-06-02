@@ -20,7 +20,7 @@
 }
 
 .about__textbox--heading1 {
-	font-family: 'Montserrat';
+	font-family: 'Montserrat', sans-serif;
 	font-style: normal;
 	font-weight: 600;
 	font-size: 1.1em;
@@ -29,10 +29,28 @@
 }
 
 .about__textbox--heading2 {
-	font-family: 'Manrope';
+	font-family: 'Manrope', sans-serif;
 	font-style: normal;
 	font-weight: 500;
 	font-size: 0.8em;
 	line-height: 1.5em;
 	color: #000000;
+}
+
+@media screen and (max-width: 768px) {
+	.about__textbox {
+		grid-column: 2 / span 10;
+		grid-row: 3 / span 7;
+		background-color: #ffffff60;
+		padding: 20px;
+		border-radius: 20px;
+	}
+
+	.about__textbox--heading1 {
+		font-size: 22px;
+	}
+
+	.about__textbox--heading2 {
+		font-size: 16px;
+	}
 }

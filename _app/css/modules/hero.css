@@ -44,3 +44,19 @@
 	0% { opacity: 0; }
 	100% { opacity: 1; }
  }
+
+@media screen and (max-width: 768px) {
+	.yourbrain {
+		position: absolute;
+		left: 20%;
+		top: 20vh;
+		font-size: 50px;
+	}
+
+	.inajar {
+		position: absolute;
+		left: 40%;
+		top: 80vh;
+		font-size: 50px;
+	}
+}

@@ -8,10 +8,10 @@
 }
 
 .navigation__box {
-  grid-column: 1 / -1; /* start on second row and end on next to last column */
-  display: flex; /* display all children elements as flex */
-  justify-content: space-between; /* align children elements to left and right edges */
-  align-items: center; /* vertically align children elements to center */
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background: rgba(255, 255, 255, 0.12);
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
   color: #fff;
@@ -22,6 +22,11 @@
 
 .navigation__box--logo {
   cursor: pointer;
+  background-image: url('/_app/assets/icons/Logo.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 50px;
+  width: 200px;
 }
 
 .navigation__box--items {
@@ -29,7 +34,7 @@
   justify-content: space-evenly;
   align-items: center;
   
-  font-family: 'Helvetica Neue';
+  font-family: 'Helvetica Neue', sans-serif;
   font-style: normal;
   font-weight: 300;
   font-size: 1.5rem;
@@ -53,7 +58,7 @@
   align-items: center;
   width: 20vh;
   height: 7vh;
-  font-family: 'Helvetica Neue';
+  font-family: 'Helvetica Neue', sans-serif;
   font-size: 1em;
   background: #FFD702;
   color: rgb(0, 0, 0);
@@ -61,9 +66,62 @@
   cursor: pointer;
 }
 
+.navigation__box--icon {
+  display: none;
+}
+
 .navigation__box--button:hover {
   text-decoration: none;
   box-shadow: 0px 0px 48px -6px rgba(255,248,0,0.33);
   -webkit-box-shadow: 0px 0px 48px -6px rgba(255,248,0,0.33);
   -moz-box-shadow: 0px 0px 48px -6px rgba(255,248,0,0.33);
+}
+@media only screen and (min-width: 768px) {
+  .navigation__box--icon {
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  
+  .navigation__box--items {
+    display: none;
+  }
+
+  .navigation__box--button {
+    display: none;
+  }
+
+  .navigation__box--logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navigation__box--icon {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+  }
+
+  .navigation__box--icon ul {
+    display: flex;
+    list-style: none;
+  }
+
+  .navigation__box--icon li {
+    display: flex;
+    text-align: center;
+    margin: 0 1em; 
+  }
+
+  .material-symbols-outlined {
+    font-size: 38px;
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 300,
+    'GRAD' 200,
+    'opsz' 48
+  }
 }
