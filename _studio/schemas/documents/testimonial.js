@@ -19,14 +19,6 @@ export default {
 			type: 'string',
 		},
 		{
-			title: 'Slug',
-			name: 'slug',
-			type: 'slug',
-			options: {
-				source: 'title'
-			}
-		},
-		{
 			title: 'Review',
 			name: 'review',
 			type: 'text',
