@@ -23,20 +23,18 @@ footer {
 .footer {
 	display: flex;
 	padding: 2rem;
-	justify-content: space-between;
+	justify-content: space-evenly;
 }
 
 .footer__logo-git {
-	width: 4rem;
-	height: 4rem;
-	background-image: url('/_app/assets/github.png');
+	width: 50px;
+	height: 50px;
+	background-image: url('/_app/assets/icons/github.png');
 	background-size: cover;
-	float: left;
 }
 .footer__logo-linked {
-	width: 3rem;
-	height: 3rem;
-	background-image: url('/_app/assets/linkedin.png');
+	width: 50px;
+	height: 50px;
+	background-image: url('/_app/assets/icons/linkedin.png');
 	background-size: cover;
-	float: left;
 }
