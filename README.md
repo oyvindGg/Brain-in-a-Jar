@@ -33,6 +33,6 @@ The website is deployed using Sanity Studio and [Netlify](https://braininajar.ne
 ## How to Run
 To run the project locally, follow these steps:
 
-1. Clone the repository: git clone https://github.com/0yvz/Brain-in-a-jar.git
+1. Clone the repository: git clone https://github.com/oyvindGg/Brain-in-a-jar.git
 2. Open the project directory: cd brain-in-a-jar
 3. Open index.html in your browser to view the website.
